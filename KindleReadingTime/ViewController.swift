@@ -8,6 +8,16 @@
 
 import UIKit
 
+class Book {
+    let title: String
+    let author: String
+
+    init(title: String, author: String){
+        self.title = title
+        self.author = author
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
