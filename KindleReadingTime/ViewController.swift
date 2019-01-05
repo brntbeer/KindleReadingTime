@@ -23,8 +23,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
+        view.backgroundColor = .red
 
+        let book = Book(title: "Steve Jobs", author: "Walter Isaacson")
+        //print(book.title, book.author)
+        print("Title: \(book.title) and Author: \(book.author)")
+
+    }
 
 }
 
