@@ -11,10 +11,12 @@ import UIKit
 class Book {
     let title: String
     let author: String
+    let pages: [Page]
 
-    init(title: String, author: String){
+    init(title: String, author: String, pages: [Page]){
         self.title = title
         self.author = author
+        self.pages = pages
     }
 }
 
@@ -41,11 +43,15 @@ class ViewController: UIViewController {
         print(page1.text)
         print(page2.text)
 
-        let book = Book(title: "Steve Jobs", author: "Walter Isaacson")
+        let pages = [page1, page2]
+
+        let book = Book(title: "Steve Jobs", author: "Walter Isaacson", pages: pages)
         //print(book.title, book.author)
         print("Title: \(book.title) and Author: \(book.author)")
 
+        let firstpage = book.pages[0]
 
+        print(firstpage.text)
     }
 
 }
