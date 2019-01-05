@@ -18,6 +18,16 @@ class Book {
     }
 }
 
+class Page {
+    let number: Int
+    let text: String
+
+    init(number: Int, text: String){
+        self.number = number
+        self.text = text
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
