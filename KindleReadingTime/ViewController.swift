@@ -50,11 +50,11 @@ class ViewController: UIViewController {
         //    print(page2.text)
         //}
         
-        for page in book.pages {
-            if page.number == 1 {
-              print(page.text)
-            }
-        }
+//        for page in book.pages {
+//            if page.number == 1 {
+//              print(page.text)
+//            }
+//        }
 
         let book2 = Book(title: "Bill Gates: A Biography", author: "Michael Becraft", pages: [
             Page(number: 1, text: "Text in book2 for page 1"),
