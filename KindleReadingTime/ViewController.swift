@@ -44,7 +44,11 @@ class ViewController: UIViewController {
 
         let book = Book(title: "Steve Jobs", author: "Walter Isaacson", pages: pages)
 
-        let firstpage = book.pages[0]
+        //let firstpage = book.pages[0]
+
+        //if page2.text.contains("Text") {
+        //    print(page2.text)
+        //}
     }
 
 }
