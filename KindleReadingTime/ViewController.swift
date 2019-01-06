@@ -63,9 +63,8 @@ class ViewController: UIViewController {
             Page(number: 4, text: "Text in book2 for page 4"),
 
             ])
-        let books = [book, book2]
 
-        for book in books {
+        for book in [book, book2] {
             for page in book.pages {
                 print(page.text)
             }
