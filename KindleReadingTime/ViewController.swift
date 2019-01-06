@@ -37,21 +37,38 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = .red
 
-        let page1 = Page(number: 1, text: "Text for first page1")
-        let page2 = Page(number: 2, text: "Text for page 2")
-
-        print(page1.text)
-        print(page2.text)
+        let page1 = Page(number: 1, text: "Text for book1 page 1")
+        let page2 = Page(number: 2, text: "Text for book1 page 2")
 
         let pages = [page1, page2]
 
         let book = Book(title: "Steve Jobs", author: "Walter Isaacson", pages: pages)
-        //print(book.title, book.author)
-        print("Title: \(book.title) and Author: \(book.author)")
 
-        let firstpage = book.pages[0]
+        //let firstpage = book.pages[0]
 
-        print(firstpage.text)
+        //if page2.text.contains("Text") {
+        //    print(page2.text)
+        //}
+        
+//        for page in book.pages {
+//            if page.number == 1 {
+//              print(page.text)
+//            }
+//        }
+
+        let book2 = Book(title: "Bill Gates: A Biography", author: "Michael Becraft", pages: [
+            Page(number: 1, text: "Text in book2 for page 1"),
+            Page(number: 2, text: "Text in book2 for page 2"),
+            Page(number: 3, text: "Text in book2 for page 3"),
+            Page(number: 4, text: "Text in book2 for page 4"),
+
+            ])
+
+        for book in [book, book2] {
+            for page in book.pages {
+                print(page.text)
+            }
+        }
     }
 
 }
