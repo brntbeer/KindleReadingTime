@@ -49,6 +49,12 @@ class ViewController: UIViewController {
         //if page2.text.contains("Text") {
         //    print(page2.text)
         //}
+        
+        for page in book.pages {
+            if page.number == 1 {
+              print(page.text)
+            }
+        }
     }
 
 }
