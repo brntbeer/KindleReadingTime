@@ -32,6 +32,8 @@ class Page {
 
 class ViewController: UIViewController {
 
+  var books: [Book]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -52,6 +54,8 @@ class ViewController: UIViewController {
             Page(number: 4, text: "Text in book2 for page 4"),
 
             ])
+
+      self.books = [book, book2]
 
         for book in [book, book2] {
             for page in book.pages {
