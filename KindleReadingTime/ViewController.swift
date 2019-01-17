@@ -55,13 +55,15 @@ class ViewController: UIViewController {
 
             ])
 
-      self.books = [book, book2]
+      //self.books = [book, book2]
 
-        for book in [book, book2] {
+      if let unwrappedBooks = self.books {
+        for book in unwrappedBooks {
             for page in book.pages {
                 print(page.text)
             }
         }
+      }
     }
 
 }
