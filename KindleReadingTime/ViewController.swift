@@ -54,16 +54,22 @@ class ViewController: UIViewController {
             Page(number: 4, text: "Text in book2 for page 4"),
 
             ])
+      self.books = [book, book2]
 
-      //self.books = [book, book2]
+      guard let books = self.books else { return }
 
-      if let unwrappedBooks = self.books {
-        for book in unwrappedBooks {
-            for page in book.pages {
-                print(page.text)
-            }
+      for book in books {
+        for page in book.pages {
+          print(page.text)
         }
       }
+//      if let unwrappedBooks = self.books {
+//        for book in unwrappedBooks {
+//            for page in book.pages {
+//                print(page.text)
+//            }
+//        }
+//      }
     }
 
 }
