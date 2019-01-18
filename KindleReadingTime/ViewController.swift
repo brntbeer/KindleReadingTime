@@ -17,6 +17,8 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = .red
 
+      navigationItem.title = "Kindle Reading Time"
+
       setupBooks()
     }
 
