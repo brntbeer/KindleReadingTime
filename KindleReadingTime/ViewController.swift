@@ -30,7 +30,7 @@ class Page {
     }
 }
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
 
   var books: [Book]?
 
