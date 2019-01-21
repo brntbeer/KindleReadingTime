@@ -39,21 +39,6 @@ class ViewController: UITableViewController {
       ])
     self.books = [book, book2]
 
-    guard let books = self.books else { return }
-
-    for book in books {
-      for page in book.pages {
-        print(page.text)
-      }
-    }
-    //      if let unwrappedBooks = self.books {
-    //        for book in unwrappedBooks {
-    //            for page in book.pages {
-    //                print(page.text)
-    //            }
-    //        }
-    //      }
-
   }
 
 }
