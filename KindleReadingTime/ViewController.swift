@@ -13,9 +13,8 @@ class ViewController: UITableViewController {
   var books: [Book]?
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        view.backgroundColor = .red
+      super.viewDidLoad()
+
 
       navigationItem.title = "Kindle Reading Time"
 
