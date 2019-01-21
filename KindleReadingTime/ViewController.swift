@@ -15,11 +15,23 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
       super.viewDidLoad()
 
+      tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
+      tableView.tableFooterView = UIView()
 
       navigationItem.title = "Kindle Reading Time"
 
       setupBooks()
     }
+
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
+    cell.backgroundColor = .green
+    return cell
+  }
+
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 5
+  }
 
   func setupBooks() {
     let page1 = Page(number: 1, text: "Text for book1 page 1")
