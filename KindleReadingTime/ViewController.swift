@@ -30,13 +30,18 @@ class ViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
 
-    cell.textLabel?.text = "Some Text"
+    let book = books?[indexPath.row]
+
+    cell.textLabel?.text = book?.title
 
     return cell
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
+    if let count = books?.count {
+      return count
+    }
+    return 0
   }
 
   func setupBooks() {
