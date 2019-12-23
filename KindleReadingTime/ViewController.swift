@@ -16,7 +16,7 @@ class ViewController: UITableViewController {
       super.viewDidLoad()
 
       //setup cells to be of UITableViewCells that later get dequeued
-      tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
+      tableView.register(BookCell.self, forCellReuseIdentifier: "cellId")
 
       //remove all unecessary rows that aren't setup from UITableView
       tableView.tableFooterView = UIView()
@@ -39,6 +39,8 @@ class ViewController: UITableViewController {
 
     //each cell has a dynamic label from the book list.
     cell.textLabel?.text = book?.title
+    // reminder: the ? here because book here is an optional value.
+    cell.imageView?.image = book?.image
 
     return cell
   }
@@ -58,10 +60,13 @@ class ViewController: UITableViewController {
 
     let pages = [page1, page2]
 
-    let book = Book(title: "Steve Jobs", author: "Walter Isaacson", pages: pages)
+    //type `image literal` to get images here or the actual syntax #imageLiteral(resourceName: "steve_jobs")
+    // or go into the media library (+ sign in upper right corner
+    // and search for `steve_jobs` or any name of image asset
+    let book = Book(title: "Steve Jobs", author: "Walter Isaacson", image: #imageLiteral(resourceName: "steve_jobs"), pages: pages)
 
 
-    let book2 = Book(title: "Bill Gates: A Biography", author: "Michael Becraft", pages: [
+    let book2 = Book(title: "Bill Gates: A Biography", author: "Michael Becraft", image: #imageLiteral(resourceName: "bill_gates"), pages: [
       Page(number: 1, text: "Text in book2 for page 1"),
       Page(number: 2, text: "Text in book2 for page 2"),
       Page(number: 3, text: "Text in book2 for page 3"),
