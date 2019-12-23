@@ -15,7 +15,10 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
       super.viewDidLoad()
 
+      //setup cells to be of UITableViewCells that later get dequeued
       tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
+
+      //remove all unecessary rows that aren't setup from UITableView
       tableView.tableFooterView = UIView()
 
       navigationItem.title = "Kindle Reading Time"
@@ -23,6 +26,7 @@ class ViewController: UITableViewController {
       setupBooks()
     }
 
+  //  set up rows to be of a certain height
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 80
   }
@@ -30,14 +34,18 @@ class ViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
 
+    //we want to grab the book that would be at each row in the indexPath
     let book = books?[indexPath.row]
 
+    //each cell has a dynamic label from the book list.
     cell.textLabel?.text = book?.title
 
     return cell
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //"if let" unwrapping syntax because when the application starts up the count is 0. after the view finishes loading we have the number of books.
+    // When the view finishes reloading itself, we have this proper count
     if let count = books?.count {
       return count
     }
