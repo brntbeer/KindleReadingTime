@@ -16,7 +16,7 @@ class ViewController: UITableViewController {
       super.viewDidLoad()
 
       //setup cells to be of UITableViewCells that later get dequeued
-      tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
+      tableView.register(BookCell.self, forCellReuseIdentifier: "cellId")
 
       //remove all unecessary rows that aren't setup from UITableView
       tableView.tableFooterView = UIView()
