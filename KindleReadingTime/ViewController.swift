@@ -40,6 +40,10 @@ class ViewController: UITableViewController {
     //each cell has a dynamic label from the book list.
     cell.textLabel?.text = book?.title
 
+    //type `image literal` to get here. or go into the media library (+ sign in upper right corner
+    // and search for `steve_jobs` or any name of image asset
+    cell.imageView?.image = #imageLiteral(resourceName: "steve_jobs")
+
     return cell
   }
 
