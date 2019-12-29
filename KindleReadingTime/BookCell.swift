@@ -18,7 +18,7 @@ class BookCell: UITableViewCell {
     return imageView
   }()
 
-  let titleLabel: UIImageView = {
+  let titleLabel: UILabel = {
     let label = UILabel()
     label.text = "This is the text from the the book for the title in our cell"
     return label
