@@ -35,12 +35,12 @@ class ViewController: UITableViewController {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
 
     //we want to grab the book that would be at each row in the indexPath
-    let book = books?[indexPath.row]
-
-    //each cell has a dynamic label from the book list.
-    cell.textLabel?.text = book?.title
-    // reminder: the ? here because book here is an optional value.
-    cell.imageView?.image = book?.image
+//    let book = books?[indexPath.row]
+//
+//    //each cell has a dynamic label from the book list.
+//    cell.textLabel?.text = book?.title
+//    // reminder: the ? here because book here is an optional value.
+//    cell.imageView?.image = book?.image
 
     return cell
   }
