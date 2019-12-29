@@ -39,13 +39,10 @@ class BookCell: UITableViewCell {
     backgroundColor = .yellow
 
     addSubview(coverImageView)
-    coverImageView.frame = CGRect(x: 8, y: 8, width: 50, height: 64 )
 
     addSubview(titleLabel)
-    titleLabel.frame = CGRect(x: 66, y: 20, width: 200, height: 20)
 
     addSubview(authorLabel)
-    authorLabel.frame = CGRect(x: 66, y: 48, width: 200, height: 20)
   }
 
   required init?(coder: NSCoder) {
