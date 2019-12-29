@@ -21,6 +21,14 @@ class BookCell: UITableViewCell {
   let titleLabel: UILabel = {
     let label = UILabel()
     label.text = "This is the text from the the book for the title in our cell"
+    label.backgroundColor = .blue
+    return label
+  }()
+
+  let authorLabel: UILabel = {
+    let label = UILabel ()
+    label.text = "this is the author name"
+    label.backgroundColor = .green
     return label
   }()
 
@@ -35,6 +43,9 @@ class BookCell: UITableViewCell {
 
     addSubview(titleLabel)
     titleLabel.frame = CGRect(x: 66, y: 20, width: 200, height: 20)
+
+    addSubview(authorLabel)
+    authorLabel.frame = CGRect(x: 66, y: 48, width: 200, height: 20)
   }
 
   required init?(coder: NSCoder) {
