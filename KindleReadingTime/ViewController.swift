@@ -28,7 +28,7 @@ class ViewController: UITableViewController {
 
   //  set up rows to be of a certain height
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 80
+    return 100
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -15,6 +15,7 @@ class BookCell: UITableViewCell {
   let coverImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.backgroundColor = .red
+    imageView.translatesAutoresizingMaskIntoConstraints = false 
     return imageView
   }()
 
@@ -39,6 +40,10 @@ class BookCell: UITableViewCell {
     backgroundColor = .yellow
 
     addSubview(coverImageView)
+    coverImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
+    coverImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
+    coverImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8).isActive = true
+    coverImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
 
     addSubview(titleLabel)
 
