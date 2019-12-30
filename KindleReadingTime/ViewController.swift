@@ -12,6 +12,7 @@ class ViewController: UITableViewController {
 
   var books: [Book]?
 
+  //this basically functions as "int main" if this was C++
     override func viewDidLoad() {
       super.viewDidLoad()
 
@@ -23,14 +24,21 @@ class ViewController: UITableViewController {
 
       navigationItem.title = "Kindle Reading Time"
 
+      // Program order:
+      // 1) setupbooks
+      //   - setup books will finish, then the override functions are called
+      // 2) it figures out how many rows we have (numberOfRowsInSection)
+      // 3) it puts Cells in each row.
+      // 4) It calculates the heightForRow
       setupBooks()
     }
 
-  //  set up rows to be of a certain height
+  //set up rows to be of a certain height
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 100
+    return 86
   }
 
+  //This func makes sure that each row is an object of a type we specify
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
 
@@ -45,6 +53,8 @@ class ViewController: UITableViewController {
     return cell
   }
 
+  //This override is called before any of the rows get cells placed in them. But the "if let" doesnt have any books yet so it gets skipped
+  //How many number of rows for the tableView do we need? This method figures that out based on `func setupBooks`
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     //"if let" unwrapping syntax because when the application starts up the count is 0. after the view finishes loading we have the number of books.
     // When the view finishes reloading itself, we have this proper count
