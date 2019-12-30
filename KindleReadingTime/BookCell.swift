@@ -15,7 +15,8 @@ class BookCell: UITableViewCell {
   let coverImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.backgroundColor = .red
-    imageView.translatesAutoresizingMaskIntoConstraints = false 
+    //disable the old style of how we did our layouts
+    imageView.translatesAutoresizingMaskIntoConstraints = false
     return imageView
   }()
 
