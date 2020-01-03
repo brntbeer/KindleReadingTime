@@ -18,6 +18,7 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
 
     collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
 
+    //downcasting basically: https://stackoverflow.com/questions/25708649/downcasting-optionals-in-swift-as-type-or-as-type
     let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
     layout?.scrollDirection = .horizontal
   }
