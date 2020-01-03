@@ -50,6 +50,13 @@ class ViewController: UITableViewController {
     return cell
   }
 
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    let layout = UICollectionViewFlowLayout()
+    let bookPagerController = BookPagerController (collectionViewLayout: layout)
+    self.present(bookPagerController, animated: true, completion: nil)
+  }
+
   //This override is called before any of the rows get cells placed in them. But the "if let" doesnt have any books yet so it gets skipped
   //How many number of rows for the tableView do we need? This method figures that out based on `func setupBooks`
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
