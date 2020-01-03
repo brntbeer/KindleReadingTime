@@ -17,6 +17,9 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
     navigationItem.title = "Book"
 
     collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+
+    let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
+    layout?.scrollDirection = .horizontal
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
