@@ -11,6 +11,7 @@ class BookPagerController: UICollectionViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    collectionView?.backgroundColor = .blue
+    //defaults to black
+    collectionView?.backgroundColor = .white
   }
 }

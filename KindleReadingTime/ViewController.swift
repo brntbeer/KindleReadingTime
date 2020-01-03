@@ -55,7 +55,9 @@ class ViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let layout = UICollectionViewFlowLayout()
     let bookPagerController = BookPagerController (collectionViewLayout: layout)
-    self.present(bookPagerController, animated: true, completion: nil)
+
+    let navController = UINavigationController(rootViewController: bookPagerController)
+    self.present(navController, animated: true, completion: nil)
   }
 
   //This override is called before any of the rows get cells placed in them. But the "if let" doesnt have any books yet so it gets skipped
