@@ -57,6 +57,7 @@ class ViewController: UITableViewController {
     let bookPagerController = BookPagerController (collectionViewLayout: layout)
 
     let navController = UINavigationController(rootViewController: bookPagerController)
+    navController.modalPresentationStyle = .fullScreen
     self.present(navController, animated: true, completion: nil)
   }
 

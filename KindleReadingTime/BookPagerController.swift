@@ -27,8 +27,6 @@ class BookPagerController: UICollectionViewController {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
 
     cell.backgroundColor = .red
-
-
     return cell
   }
 }
