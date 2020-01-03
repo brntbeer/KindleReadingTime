@@ -17,6 +17,7 @@ class BookCell: UITableViewCell {
     imageView.backgroundColor = .red
     //disable the old style of how we did our layouts
     imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.image = #imageLiteral(resourceName: "steve_jobs")
     return imageView
   }()
 
@@ -24,6 +25,7 @@ class BookCell: UITableViewCell {
     let label = UILabel()
     label.text = "This is the text from the the book for the title in our cell"
     label.backgroundColor = .blue
+    label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
 
@@ -31,14 +33,13 @@ class BookCell: UITableViewCell {
     let label = UILabel ()
     label.text = "this is the author name"
     label.backgroundColor = .green
+    label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
 
   //almost auto-generated override and required init? methods just so our cell is able to render itself
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-    backgroundColor = .yellow
 
     addSubview(coverImageView)
     coverImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
@@ -47,8 +48,17 @@ class BookCell: UITableViewCell {
     coverImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
 
     addSubview(titleLabel)
+    //pin the title to wherever the right anchor of the image is+8
+    titleLabel.leftAnchor.constraint(equalTo: coverImageView.rightAnchor, constant: 8).isActive = true
+    titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -8).isActive = true
+    titleLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+    titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10).isActive = true
 
     addSubview(authorLabel)
+    authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4).isActive = true
+    authorLabel.leftAnchor.constraint(equalTo: coverImageView.rightAnchor, constant: 8).isActive = true
+    authorLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -8).isActive = true
+    authorLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
   }
 
   required init?(coder: NSCoder) {
