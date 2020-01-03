@@ -21,6 +21,9 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
     //downcasting basically: https://stackoverflow.com/questions/25708649/downcasting-optionals-in-swift-as-type-or-as-type
     let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
     layout?.scrollDirection = .horizontal
+    layout?.minimumLineSpacing = 0
+
+    collectionView?.isPagingEnabled = true
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
