@@ -50,6 +50,17 @@ class ViewController: UITableViewController {
     return cell
   }
 
+  //when we select a book, we need to trigger a new view to load.
+  // essentially just hand this work over to a new sub=controller
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let layout = UICollectionViewFlowLayout()
+    let bookPagerController = BookPagerController (collectionViewLayout: layout)
+
+    let navController = UINavigationController(rootViewController: bookPagerController)
+    navController.modalPresentationStyle = .fullScreen
+    self.present(navController, animated: true, completion: nil)
+  }
+
   //This override is called before any of the rows get cells placed in them. But the "if let" doesnt have any books yet so it gets skipped
   //How many number of rows for the tableView do we need? This method figures that out based on `func setupBooks`
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

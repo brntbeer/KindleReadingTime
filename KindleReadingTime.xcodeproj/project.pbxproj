@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F30A4A923B100530043F4F0 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F30A4A823B100530043F4F0 /* BookCell.swift */; };
+		0F30A4AB23BF917A0043F4F0 /* BookPagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F30A4AA23BF917A0043F4F0 /* BookPagerController.swift */; };
 		0F58404A21F239F200105A6F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58404921F239F200105A6F /* Models.swift */; };
 		0F7B1C5721E10A150074D6EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B1C5621E10A150074D6EC /* AppDelegate.swift */; };
 		0F7B1C5921E10A150074D6EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B1C5821E10A150074D6EC /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		0F30A4A823B100530043F4F0 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		0F30A4AA23BF917A0043F4F0 /* BookPagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPagerController.swift; sourceTree = "<group>"; };
 		0F58404921F239F200105A6F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		0F7B1C5321E10A150074D6EC /* KindleReadingTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KindleReadingTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F7B1C5621E10A150074D6EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				0F7B1C6221E10A170074D6EC /* Info.plist */,
 				0F58404921F239F200105A6F /* Models.swift */,
 				0F30A4A823B100530043F4F0 /* BookCell.swift */,
+				0F30A4AA23BF917A0043F4F0 /* BookPagerController.swift */,
 			);
 			path = KindleReadingTime;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F30A4A923B100530043F4F0 /* BookCell.swift in Sources */,
+				0F30A4AB23BF917A0043F4F0 /* BookPagerController.swift in Sources */,
 				0F58404A21F239F200105A6F /* Models.swift in Sources */,
 				0F7B1C5921E10A150074D6EC /* ViewController.swift in Sources */,
 				0F7B1C5721E10A150074D6EC /* AppDelegate.swift in Sources */,
