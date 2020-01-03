@@ -14,7 +14,6 @@ class BookCell: UITableViewCell {
 
   let coverImageView: UIImageView = {
     let imageView = UIImageView()
-    imageView.backgroundColor = .red
     //disable the old style of how we did our layouts
     imageView.translatesAutoresizingMaskIntoConstraints = false
     imageView.image = #imageLiteral(resourceName: "steve_jobs")
@@ -24,7 +23,6 @@ class BookCell: UITableViewCell {
   let titleLabel: UILabel = {
     let label = UILabel()
     label.text = "This is the text from the the book for the title in our cell"
-    label.backgroundColor = .blue
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
@@ -32,7 +30,6 @@ class BookCell: UITableViewCell {
   let authorLabel: UILabel = {
     let label = UILabel ()
     label.text = "this is the author name"
-    label.backgroundColor = .green
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
