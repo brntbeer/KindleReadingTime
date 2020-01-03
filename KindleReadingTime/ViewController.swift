@@ -44,10 +44,8 @@ class ViewController: UITableViewController {
 
     //we want to grab the book that would be at each row in the indexPath
     let book = books?[indexPath.row]
-
-    cell.coverImageView.image = book?.image
-    cell.titleLabel.text = book?.title
-    cell.authorLabel.text = book?.author
+    //render each cell's book as the book object
+    cell.book = book
 
     return cell
   }
