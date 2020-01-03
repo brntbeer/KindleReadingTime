@@ -50,8 +50,9 @@ class ViewController: UITableViewController {
     return cell
   }
 
+  //when we select a book, we need to trigger a new view to load.
+  // essentially just hand this work over to a new sub=controller
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
     let layout = UICollectionViewFlowLayout()
     let bookPagerController = BookPagerController (collectionViewLayout: layout)
     self.present(bookPagerController, animated: true, completion: nil)
