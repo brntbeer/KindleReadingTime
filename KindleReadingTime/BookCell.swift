@@ -12,27 +12,32 @@ import UIKit
 // more freedom to define how we want the cell to look.
 class BookCell: UITableViewCell {
 
-  let coverImageView: UIImageView = {
+  var book: Book? {
+    didSet{
+      coverImageView.image = book?.image
+      titleLabel.text = book?.title
+      authorLabel.text = book?.author
+    }
+  }
+
+  private let coverImageView: UIImageView = {
     let imageView = UIImageView()
-    imageView.backgroundColor = .red
     //disable the old style of how we did our layouts
     imageView.translatesAutoresizingMaskIntoConstraints = false
     imageView.image = #imageLiteral(resourceName: "steve_jobs")
     return imageView
   }()
 
-  let titleLabel: UILabel = {
+  private let titleLabel: UILabel = {
     let label = UILabel()
     label.text = "This is the text from the the book for the title in our cell"
-    label.backgroundColor = .blue
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
 
-  let authorLabel: UILabel = {
+  private let authorLabel: UILabel = {
     let label = UILabel ()
     label.text = "this is the author name"
-    label.backgroundColor = .green
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
