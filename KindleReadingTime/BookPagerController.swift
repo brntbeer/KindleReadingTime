@@ -16,7 +16,7 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
 
     navigationItem.title = "Book"
 
-    collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+    collectionView?.register(PageCell.self, forCellWithReuseIdentifier: "cellId")
 
     //downcasting basically: https://stackoverflow.com/questions/25708649/downcasting-optionals-in-swift-as-type-or-as-type
     let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
@@ -37,11 +37,11 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
 
-    if indexPath.item % 2 == 0 {
+    /*if indexPath.item % 2 == 0 {
       cell.backgroundColor = .red
     } else {
       cell.backgroundColor = .blue
-    }
+    }*/
 
     return cell
   }
