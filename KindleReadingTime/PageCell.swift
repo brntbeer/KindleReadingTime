@@ -12,9 +12,10 @@ class PageCell: UICollectionViewCell {
   //create subview of UILabel
   let textLabel: UILabel = {
     let label = UILabel()
-    label.text = "SOME TEXT FOR OUR LABEL"
+    label.text = "SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL "
     label.backgroundColor = .green
     label.translatesAutoresizingMaskIntoConstraints = false
+    label.numberOfLines = 0
     return label
   }()
 
