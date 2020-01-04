@@ -13,7 +13,6 @@ class PageCell: UICollectionViewCell {
   let textLabel: UILabel = {
     let label = UILabel()
     label.text = "SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL "
-    label.backgroundColor = .green
     label.translatesAutoresizingMaskIntoConstraints = false
     label.numberOfLines = 0
     return label
@@ -22,14 +21,13 @@ class PageCell: UICollectionViewCell {
   override init(frame:CGRect) {
     super.init(frame: frame)
 
-    backgroundColor = .yellow
 
     addSubview(textLabel)
     //textLabel.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
     textLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-    textLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+    textLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive = true
     textLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-    textLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+    textLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10).isActive = true
 
 
   }
