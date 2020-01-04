@@ -9,6 +9,9 @@
 import UIKit
 class BookPagerController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+  //has to be var and optional instead of let, because at initialization it will be nil
+  var book: Book?
+
   override func viewDidLoad() {
     super.viewDidLoad()
     //defaults to black
