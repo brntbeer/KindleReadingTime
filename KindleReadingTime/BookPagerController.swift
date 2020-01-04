@@ -45,14 +45,16 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
   }
 
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
+    let pageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PageCell
 
+    let page = book?.pages[indexPath.item]
+    pageCell.textLabel.text = page?.text
     /*if indexPath.item % 2 == 0 {
       cell.backgroundColor = .red
     } else {
       cell.backgroundColor = .blue
     }*/
 
-    return cell
+    return pageCell
   }
 }
