@@ -31,7 +31,34 @@ class ViewController: UITableViewController {
       // 3) it puts Cells in each row.
       // 4) It calculates the heightForRow
       setupBooks()
+      fetchBooks()
     }
+
+  func fetchBooks() {
+    print ("fetching books!")
+
+    if let url = URL(string: "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/kindle.json") {
+      URLSession.shared.dataTask(with: url) { (data, response, error) in
+
+        if let err = error {
+          print("Failed to fetch external JSON Books", err)
+          return
+        }
+
+        //print(response)
+        //print(data)
+        guard let data = data else { return }
+
+        guard let dataAsString = String(data: data, encoding: .utf8)
+          else { return }
+
+        print(dataAsString)
+
+      }.resume()
+
+      print("Have we Fetched our books yet?")
+    }
+  }
 
   //set up rows to be of a certain height
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
