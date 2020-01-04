@@ -59,11 +59,12 @@ class ViewController: UITableViewController {
     let layout = UICollectionViewFlowLayout()
     let bookPagerController = BookPagerController (collectionViewLayout: layout)
 
+    bookPagerController.book = selectedBook
+
     let navController = UINavigationController(rootViewController: bookPagerController)
+    //allows the window to not "float" down below the top
     navController.modalPresentationStyle = .fullScreen
     self.present(navController, animated: true, completion: nil)
-
-    bookPagerController.book = selectedBook
   }
 
   //This override is called before any of the rows get cells placed in them. But the "if let" doesnt have any books yet so it gets skipped
