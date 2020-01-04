@@ -30,7 +30,8 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: view.frame.width, height: view.frame.height)
+    //34 for status bar, 88 for nav?
+    return CGSize(width: view.frame.width, height: view.frame.height - 34 - 88)
   }
 
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
