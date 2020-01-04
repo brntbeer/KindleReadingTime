@@ -30,13 +30,11 @@ class ViewController: UITableViewController {
       // 2) it figures out how many rows we have (numberOfRowsInSection)
       // 3) it puts Cells in each row.
       // 4) It calculates the heightForRow
-      setupBooks()
+      //setupBooks()
       fetchBooks()
     }
 
   func fetchBooks() {
-    print ("fetching books!")
-
     if let url = URL(string: "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/kindle.json") {
       URLSession.shared.dataTask(with: url) { (data, response, error) in
 
@@ -45,18 +43,32 @@ class ViewController: UITableViewController {
           return
         }
 
-        //print(response)
-        //print(data)
         guard let data = data else { return }
 
-        guard let dataAsString = String(data: data, encoding: .utf8)
+        do {
+          let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+
+         guard let bookDictionaries = json as? [[String: Any]]
           else { return }
 
-        print(dataAsString)
+          self.books = []
+          for bookDictionary in bookDictionaries {
 
+            if let title = bookDictionary["title"] as? String, let author = bookDictionary["author"] as? String {
+              let book = Book(title: title, author: author, image: #imageLiteral(resourceName: "steve_jobs"), pages: [])
+              //self here because of retain cycles
+              self.books?.append(book)
+            }
+          }
+
+          DispatchQueue.main.async{
+            self.tableView.reloadData()
+          }
+        } catch let jsonError {
+          print("Failed to parse JSON properly", jsonError)
+        }
       }.resume()
 
-      print("Have we Fetched our books yet?")
     }
   }
 
