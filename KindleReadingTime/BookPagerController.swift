@@ -17,7 +17,7 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
     //defaults to black
     collectionView?.backgroundColor = .white
 
-    navigationItem.title = "Book"
+    navigationItem.title = self.book?.title
 
     collectionView?.register(PageCell.self, forCellWithReuseIdentifier: "cellId")
 
@@ -27,6 +27,12 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
     layout?.minimumLineSpacing = 0
 
     collectionView?.isPagingEnabled = true
+
+    self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(handleCloseBook))
+  }
+
+  @objc func handleCloseBook() {
+    dismiss(animated:true, completion: nil)
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
