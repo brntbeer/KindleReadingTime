@@ -30,7 +30,7 @@ class ViewController: UITableViewController {
       // 2) it figures out how many rows we have (numberOfRowsInSection)
       // 3) it puts Cells in each row.
       // 4) It calculates the heightForRow
-      setupBooks()
+      //setupBooks()
       fetchBooks()
     }
 
@@ -48,9 +48,24 @@ class ViewController: UITableViewController {
         do {
           let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
 
-          print(json)
-        } catch let jsonError {
+         guard let bookDictionaries = json as? [[String: Any]]
+          else { return }
 
+          for bookDictionary in bookDictionaries {
+
+            if let title = bookDictionary["title"] as? String, let author = bookDictionary["author"] as? String {
+              let book = Book(title: title, author: author, image: #imageLiteral(resourceName: "steve_jobs"), pages: [])
+
+              print(book.title)
+
+              //self here because of retain cycles
+              self.books?.append(book)
+            }
+
+          }
+          print(json)
+
+        } catch let jsonError {
           print("Failed to parse JSON properly", jsonError)
         }
       }.resume()
