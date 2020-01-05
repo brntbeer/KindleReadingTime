@@ -20,6 +20,12 @@ class Book {
     self.image = image
     self.pages = pages
   }
+  init(dictionary: [String: Any]) {
+    self.title = ""
+    self.author = ""
+    self.image = #imageLiteral(resourceName: "steve_jobs")
+    pages = []
+  }
 }
 
 class Page {
