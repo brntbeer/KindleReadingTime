@@ -21,8 +21,8 @@ class Book {
     self.pages = pages
   }
   init(dictionary: [String: Any]) {
-    self.title = ""
-    self.author = ""
+    self.title = dictionary["title"] as? String ?? ""
+    self.author = dictionary["author"] as? String ?? ""
     self.image = #imageLiteral(resourceName: "steve_jobs")
     pages = []
   }
