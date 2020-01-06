@@ -23,6 +23,7 @@ class ViewController: UITableViewController {
 
       //remove all unecessary rows that aren't setup from UITableView
       tableView.tableFooterView = UIView()
+      tableView.backgroundColor = UIColor.lightGray
 
       navigationItem.title = "Kindle Reading Time"
 
@@ -35,6 +36,16 @@ class ViewController: UITableViewController {
       //setupBooks()
       fetchBooks()
     }
+
+  override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    let view  = UIView()
+    view.backgroundColor = .red
+    return view
+  }
+
+  override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    return 50
+  }
 
   func setupNavBarButtons() {
     navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu") .withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuPress))
