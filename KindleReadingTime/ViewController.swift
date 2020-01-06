@@ -42,7 +42,13 @@ class ViewController: UITableViewController {
     footerView.backgroundColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
 
     let segmentedControl = UISegmentedControl(items: ["Cloud", "Device"])
+    segmentedControl.translatesAutoresizingMaskIntoConstraints = false
     footerView.addSubview(segmentedControl)
+
+    segmentedControl.widthAnchor.constraint(equalToConstant: 200).isActive = true
+    segmentedControl.heightAnchor.constraint(equalToConstant: 30).isActive = true
+    segmentedControl.centerXAnchor.constraint(equalTo: footerView.centerXAnchor).isActive = true
+    segmentedControl.centerYAnchor.constraint(equalTo: footerView.centerYAnchor).isActive = true
 
     return footerView
   }
