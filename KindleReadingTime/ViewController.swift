@@ -38,9 +38,10 @@ class ViewController: UITableViewController {
     }
 
   override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-    let view  = UIView()
-    view.backgroundColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
-    return view
+    let footerView  = UIView()
+    footerView.backgroundColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
+
+    return footerView
   }
 
   override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
