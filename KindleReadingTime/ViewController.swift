@@ -25,7 +25,7 @@ class ViewController: UITableViewController {
       navigationItem.title = "Kindle Reading Time"
 
       // Program order:
-      // 1) setupbooks
+      // 1) setupbooks (or fetchBooks)
       //   - setup books will finish, then the override functions are called
       // 2) it figures out how many rows we have (numberOfRowsInSection)
       // 3) it puts Cells in each row.
