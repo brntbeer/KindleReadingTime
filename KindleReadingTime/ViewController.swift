@@ -41,6 +41,9 @@ class ViewController: UITableViewController {
     let footerView  = UIView()
     footerView.backgroundColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
 
+    let segmentedControl = UISegmentedControl(items: ["Cloud", "Device"])
+    footerView.addSubview(segmentedControl)
+
     return footerView
   }
 
