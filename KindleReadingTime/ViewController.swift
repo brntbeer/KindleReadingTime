@@ -43,12 +43,34 @@ class ViewController: UITableViewController {
 
     let segmentedControl = UISegmentedControl(items: ["Cloud", "Device"])
     segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-    footerView.addSubview(segmentedControl)
+    segmentedControl.tintColor = .white
+    segmentedControl.selectedSegmentIndex = 0
 
+    footerView.addSubview(segmentedControl)
     segmentedControl.widthAnchor.constraint(equalToConstant: 200).isActive = true
     segmentedControl.heightAnchor.constraint(equalToConstant: 30).isActive = true
     segmentedControl.centerXAnchor.constraint(equalTo: footerView.centerXAnchor).isActive = true
     segmentedControl.centerYAnchor.constraint(equalTo: footerView.centerYAnchor).isActive = true
+
+    let gridButton = UIButton(type: .system)
+    gridButton.setImage(#imageLiteral(resourceName: "grid") .withRenderingMode(.alwaysOriginal), for: .normal)
+    gridButton.translatesAutoresizingMaskIntoConstraints = false
+
+    footerView.addSubview(gridButton)
+    gridButton.leftAnchor.constraint(equalTo: footerView.leftAnchor, constant: 8).isActive = true
+    gridButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+    gridButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+    gridButton.centerYAnchor.constraint(equalTo: footerView.centerYAnchor).isActive = true
+
+    let sortButton = UIButton(type: .system)
+    sortButton.setImage(#imageLiteral(resourceName: "sort") .withRenderingMode(.alwaysOriginal), for: .normal)
+    sortButton.translatesAutoresizingMaskIntoConstraints = false
+
+    footerView.addSubview(sortButton)
+    sortButton.rightAnchor.constraint(equalTo: footerView.rightAnchor, constant: -8).isActive = true
+    sortButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+    sortButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+    sortButton.centerYAnchor.constraint(equalTo: footerView.centerYAnchor).isActive = true
 
     return footerView
   }
