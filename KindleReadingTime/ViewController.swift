@@ -17,7 +17,7 @@ class ViewController: UITableViewController {
       super.viewDidLoad()
 
       setupNavigationBarStyles()
-
+      setupNavBarButtons()
       //setup cells to be of UITableViewCells that later get dequeued
       tableView.register(BookCell.self, forCellReuseIdentifier: "cellId")
 
@@ -35,6 +35,14 @@ class ViewController: UITableViewController {
       //setupBooks()
       fetchBooks()
     }
+
+  func setupNavBarButtons() {
+    navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu"), style: .plain, target: self, action: #selector(handleMenuPress))
+  }
+
+  @objc func handleMenuPress(){
+    print("Menu has been pressed!")
+  }
 
   func setupNavigationBarStyles() {
     navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
