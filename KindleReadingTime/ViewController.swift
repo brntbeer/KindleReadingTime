@@ -16,6 +16,8 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
       super.viewDidLoad()
 
+      setupNavigationBarStyles()
+      setupNavBarButtons()
       //setup cells to be of UITableViewCells that later get dequeued
       tableView.register(BookCell.self, forCellReuseIdentifier: "cellId")
 
@@ -33,6 +35,26 @@ class ViewController: UITableViewController {
       //setupBooks()
       fetchBooks()
     }
+
+  func setupNavBarButtons() {
+    navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu") .withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuPress))
+
+    navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "amazon_icon") .withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleAmazonIconPress))
+  }
+
+  @objc func handleAmazonIconPress(){
+    print("Icon has been pressed")
+  }
+
+  @objc func handleMenuPress(){
+    print("Menu has been pressed!")
+  }
+
+  func setupNavigationBarStyles() {
+    navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
+    navigationController?.navigationBar.isTranslucent = false
+    navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+  }
 
   func fetchBooks() {
     if let url = URL(string: "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/kindle.json") {
