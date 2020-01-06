@@ -39,7 +39,7 @@ class ViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
     let view  = UIView()
-    view.backgroundColor = .red
+    view.backgroundColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
     return view
   }
 
@@ -62,7 +62,7 @@ class ViewController: UITableViewController {
   }
 
   func setupNavigationBarStyles() {
-    navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
+    navigationController?.navigationBar.barTintColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
     navigationController?.navigationBar.isTranslucent = false
     navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
   }
