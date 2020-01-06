@@ -23,7 +23,9 @@ class ViewController: UITableViewController {
 
       //remove all unecessary rows that aren't setup from UITableView
       tableView.tableFooterView = UIView()
-      tableView.backgroundColor = UIColor.lightGray
+
+      //almost black!
+      tableView.backgroundColor = UIColor(white: 1, alpha: 0.3)
 
       navigationItem.title = "Kindle Reading Time"
 
