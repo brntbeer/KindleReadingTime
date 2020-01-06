@@ -26,6 +26,7 @@ class ViewController: UITableViewController {
 
       //almost black!
       tableView.backgroundColor = UIColor(white: 1, alpha: 0.3)
+      tableView.separatorColor = UIColor(white: 1, alpha: 0.2)
 
       navigationItem.title = "Kindle Reading Time"
 
